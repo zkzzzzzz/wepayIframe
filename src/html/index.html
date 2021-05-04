@@ -2,9 +2,9 @@
   
 </div> 
 <button class="btn waves-effect waves-light" type="submit" name="action" id="submit-credit-card-button">Submit</button>
-<div id="token">
+<p id="token">
   
-</div> 
+</p> 
 <script src="https://cdn.wepay.com/wepay.min.js"></script>
 <script>
     var appId = "302146";
@@ -31,9 +31,7 @@ document.getElementById('submit-credit-card-button').addEventListener('click', f
 
         console.log('response', JSON.stringify(response));
         console.log('id', response["id"]);
-        var node = document.createElement('div');
-        node.innerHTML = response["id"];
-        document.getElementById('token').appendChild(node);
+        document.getElementById('token').innerHTML = response["id"];
       })
       .catch(function (error) {
         console.log('error', error);
